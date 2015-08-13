@@ -1,0 +1,26 @@
+/*@import "bourbon/bourbon";
+@import "neat/neat";*/
+
+@charset "utf-8";
+
+body {
+  background: #eee;
+}
+
+.container {
+  float: left;
+  width: 90%;
+  padding: 2.5%;
+  margin: 2.5%;
+  background: #fff;
+}
+
+.container-half {
+  float: left;
+  background: #fff;
+  width: 40%;
+  margin: 2.5%;
+  padding: 2.5%;
+}
+.graph-container {
+}
