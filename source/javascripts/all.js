@@ -1,7 +1,5 @@
 $(function() {
 
-
-
 // Get context with jQuery - using jQuery's .get() method.
 var ctx = $("#myChart").get(0).getContext("2d");
 var ctx2 = $("#myChart2").get(0).getContext("2d");
@@ -9,7 +7,8 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
 // var myNewChart = new Chart(ctx);
 
   $.ajax({
-    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA3pCBCgw',
+    // url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA3pCBCgw',
+    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw',
     crossDomain: true,
     dataType: 'jsonp',
     context: document.body
@@ -18,7 +17,7 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
 
       var labels = data.rows.map(function(row) { return +row[0]; })
       var data1 = data.rows.map(function(row) { return +row[1]; })
-
+      var data2 = data.rows.map(function(row) { return +row[2]; })
       labels = labels.map(function(label) {
         return moment(label, 'YYYYMMDD').format('ddd');
       });
@@ -31,11 +30,19 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
         datasets : [
           {
             label: 'Last 20',
-            fillColor : 'rgba(151,187,205,0.5)',
-            strokeColor : 'rgba(151,187,205,1)',
-            pointColor : 'rgba(151,187,205,1)',
+            fillColor : 'rgba(108, 104, 131,0.25)',
+            strokeColor : 'rgba(108, 104, 131,1)',
+            pointColor : 'rgba(108, 104, 131,1)',
             pointStrokeColor : '#fff',
             data : data1
+          },
+          {
+            label: 'Last 30',
+            fillColor : 'rgba(94, 194, 241,0.25)',
+            strokeColor : 'rgba(94, 194, 241,1)',
+            pointColor : 'rgba(94, 194, 241,1)',
+            pointStrokeColor : '#fff',
+            data : data2
           }
         ]
       };
@@ -44,7 +51,7 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
   });
 
   $.ajax({
-    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmdKFCgw',
+    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw',
     crossDomain: true,
     dataType: 'jsonp',
     context: document.body
@@ -73,7 +80,7 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
       //     label: "rsss"
       //   }
       // ]
-    var labelcolor = ["#29F", "#9E2", "#77F", "#F22", "#91E", "#ce3", "#a7F", "#e9e"];
+    var labelcolor = ["#3FD3AD", "#FF6383", "#5EC2F1", "#333045", "#AEABB9", "#BFF7E7", "#FFC6D0", "#95D8F8"];
 
       //var a = ["a", "b", "c"];
     var specialdata = [];
