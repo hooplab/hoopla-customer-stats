@@ -48,6 +48,13 @@
 # end
 
 
+  # Build stat pages
+  data['organizers'].each do |organizer|
+    # puts organizer
+    # puts organizer[:name]
+    proxy "/statistics/#{organizer.generatedUrl}.html", "/statistics/template.html", :locals => { :organizer_name => organizer[:name], :line_data_url => organizer[:line_data_url], :line_data_name => organizer[:line_data_name], :donut_data_url => organizer[:donut_data_url], :donut_data_name => organizer[:donut_data_name] }, :ignore => true
+  end
+
 
 set :css_dir, 'stylesheets'
 
@@ -58,8 +65,16 @@ set :images_dir, 'images'
 # Activate LiveReload
 activate :livereload
 
+# Use relative URLs
+activate :relative_assets
+
+# Directory
+activate :directory_indexes
+
 # Build-specific configuration
 configure :build do
+
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 

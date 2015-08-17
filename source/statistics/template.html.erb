@@ -1,0 +1,46 @@
+<div class="main-sheet">
+
+<div class="header-container">
+<%= image_tag "logo-white.svg" %>
+</div>
+
+<h2><%= organizer_name %></h2>
+
+<% line_data_url.each.with_index do |data, index| %>
+  <div class="container-full short">
+    <div class="graph-container">
+      <h3><%= line_data_name[index] %></h3>
+      <canvas id="lineChart<%="#{index+1}" %>" height="100"></canvas>
+      <div id="legend-<%="#{index+1}" %>-container"></div>
+    </div>
+  </div>
+
+  <script>
+    plotLineChart(
+     "<%= "#{data}" %>",
+     "lineChart<%="#{index+1}" %>",
+     "legend-<%="#{index+1}" %>-container"
+    );
+  </script>
+<% end %>
+
+<% donut_data_url.each.with_index do |data, index| %>
+<h3><%= donut_data_name[index] %></h3>
+<div class="donut-left">
+  <div class="graph-container">
+    <canvas id="donutChart<%="#{index+1}" %>"></canvas>
+  </div>
+</div>
+<div class="donut-right">
+  <div class="graph-container">
+    <div id="donut-legend-<%="#{index+1}" %>-container" class="vertical"></div>
+  </div>
+</div>
+  <script>
+    plotDonutChart(
+     "<%= "#{data}" %>",
+     "donutChart<%="#{index+1}" %>",
+     "donut-legend-<%="#{index+1}" %>-container"
+    );
+  </script>
+<% end %>

@@ -1,5 +1,3 @@
-
-
 <div class="main-sheet">
 
 <div class="header-container">
@@ -10,8 +8,8 @@
 <div class="container-full short">
   <div class="graph-container">
   <h3>Besøk vs transaksjoner - August</h3>
-  <canvas id="myChart" height="75"></canvas>
-
+  <canvas id="lineChart1" height="75"></canvas>
+  <div id="legend-1-container"></div>
   </div>
 </div>
 
@@ -19,8 +17,14 @@
 <div class="container-half">
   <div class="graph-container">
   <h3>Trafikkilder siste 7 dager</h3>
-  <canvas id="myChart2"></canvas>
+  <canvas id="donutChart1"></canvas>
 
+  </div>
+</div>
+
+<div class="container-half">
+  <div class="graph-container">
+    <div id="legend-2-container" class="vertical"></div>
   </div>
 </div>
 
@@ -31,5 +35,13 @@
 
 <script>
 
+  plotLineChart(
+    "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw",
+    "lineChart1"
+    );
+  plotDonutChart(
+    "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw",
+    "donutChart1"
+    );
 
 </script>

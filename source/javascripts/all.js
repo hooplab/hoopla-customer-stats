@@ -1,43 +1,35 @@
-$.getScript("javascripts/chart-config.js", function(){
+$.getScript("../javascripts/chart-config.js", function(){
 
    console.log("chart-config loaded");
 
 });
 
-$(function() {
-
-// Get context with jQuery - using jQuery's .get() method.
-var ctx = $("#myChart").get(0).getContext("2d");
-var ctx2 = $("#myChart2").get(0).getContext("2d");
-// This will get the first returned node in the jQuery collection.
-// var myNewChart = new Chart(ctx);
 
 
+// Define line chart function
 
-  // Linechart
+window.plotLineChart = function plc(hcsurl, chartId, legendId) {
+
   $.ajax({
-    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw',
+    // url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw',
+    url: hcsurl,
     crossDomain: true,
     dataType: 'jsonp',
     context: document.body
     }).done(function(data) {
-      console.log("loaded");
 
       var labels = data.rows.map(function(row) { return +row[0]; })
       var data1 = data.rows.map(function(row) { return +row[1]; })
       var data2 = data.rows.map(function(row) { return +row[2]; })
-      labels = labels.map(function(label) {
-        return moment(label, 'YYYYMMDD').format('ddd');
-      });
-
-      console.log(labels);
-      console.log(data1);
+      // labels = labels.map(function(label) {
+      //   return moment(label, 'YYYYMMDD').format('ddd');
+      // });
 
       var cleanData = {
         labels : labels,
         datasets : [
           {
-            label: 'Last 20',
+            label: 'Antall besøk',
             fillColor : 'rgba(108, 104, 131,0.25)',
             strokeColor : 'rgba(108, 104, 131,1)',
             pointColor : 'rgba(108, 104, 131,1)',
@@ -45,7 +37,7 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
             data : data1
           },
           {
-            label: 'Last 30',
+            label: 'Antall kjøp',
             fillColor : 'rgba(94, 194, 241,0.25)',
             strokeColor : 'rgba(94, 194, 241,1)',
             pointColor : 'rgba(94, 194, 241,1)',
@@ -55,81 +47,53 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
         ]
       };
 
-      var myLineChart = new Chart(ctx).Line(cleanData);
+      var ctx = $("#"+chartId).get(0).getContext("2d");
+      var myLineChart = new Chart(ctx).Line(cleanData, {
+       // Gridlines
+          scaleGridLineColor: "rgba(255,255,255,0.1)"
+      });
+      generateLegend(legendId, cleanData.datasets);
   });
+}
 
 
 
+
+window.plotDonutChart = function pdc(hcsurl, chartId, legendId) {
+
+  // Donut chart
   $.ajax({
-    url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw',
+    // url: 'https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw',
+    url: hcsurl,
     crossDomain: true,
     dataType: 'jsonp',
     context: document.body
     }).done(function(data) {
-      console.log("loaded");
+
 
       var labels  = data.rows.map(function(row) { return row[0]; })
       var data1 = data.rows.map(function(row) { return +row[1]; })
 
-      console.log(labels);
-      console.log(data1);
 
-      // labels = labels.map(function(label) {
-      //   return moment(label, 'YYYYMMDD').format('ddd');
-      // });
-
-      // console.log(labels);
-      // console.log(data1);
-
-
-      // var cleanData = [
-      //   {
-      //     value: 100,
-      //     color: "#9966EE",
-      //     highlight: "#6699EE",
-      //     label: "rsss"
-      //   }
-      // ]
     var labelcolor = ["#3FD3AD", "#FF6383", "#5EC2F1", "#333045", "#AEABB9", "#BFF7E7", "#FFC6D0", "#95D8F8"];
 
       //var a = ["a", "b", "c"];
-    var specialdata = [];
+    var cleanData = [];
     data1.forEach(function(entry, i) {
-      specialdata[i] = { value: entry, color: labelcolor[i], hightlight: labelcolor[i+1], label: labels[i] }
+      cleanData[i] = { value: entry, color: labelcolor[i], hightlight: labelcolor[i+1], label: labels[i] }
       console.log(entry);
       //console.log(labels[i]);
     });
 
 
-      // var cleanData = {
-
-      //   datasets : [
-      //     {
-      //       value: data1,
-      //       color: "#9966EE",
-      //       highlight: "#6699EE",
-      //       label: labels
-      //     }
-      //   ]
-      // };
-
-
-      // var cleanData = {
-      //   labels : labels,
-      //   datasets : [
-      //     {
-      //       label: 'Last 20',
-      //       fillColor : 'rgba(151,187,205,0.5)',
-      //       strokeColor : 'rgba(151,187,205,1)',
-      //       pointColor : 'rgba(151,187,205,1)',
-      //       pointStrokeColor : '#fff',
-      //       value : data1
-      //     }
-      //   ]
-      // };
-      //var myLineChart = new Chart(ctx).Line(cleanData);
-      var myDoughnutChart = new Chart(ctx2).Doughnut(specialdata);
+      var ctx = $("#"+chartId).get(0).getContext("2d");
+      var myDoughnutChart = new Chart(ctx).Doughnut(cleanData, {
+        segmentStrokeColor : "#221F3A"
+      });
+      generateLegend(legendId, cleanData);
   });
+}
+
 
  /**
    * Create a new canvas inside the specified element. Set it to be the width
@@ -150,7 +114,6 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
     return ctx;
   }
 
-
   /**
    * Create a visual legend inside the specified element based off of a
    * Chart.js dataset.
@@ -168,8 +131,18 @@ var ctx2 = $("#myChart2").get(0).getContext("2d");
 
 
 
+$(function() {
 
+// $('#tab-content .single-tab').css('visibility','hidden');
+// $('#tab-content .single-tab:first').css('visibility','visible');
 
+// $('#nav li').click(function() {
+//     $('#nav li a').removeClass("active");
+//     $(this).find('a').addClass("active");
+//     $('#tab-content .single-tab').css('visibility','hidden');
 
+//     var indexer = $(this).index(); //gets the current index of (this) which is #nav li
+//     $('#tab-content .single-tab:eq(' + indexer + ')').css('visibility','visible'); //uses whatever index the link has to open the corresponding box
+// });
 
 });

@@ -3,14 +3,19 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 
 
-
 @charset "utf-8";
 
 body {
-  background: #eee;
+  background: #221F3A;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   padding-top: 2rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+p {
+  font-weight: 300;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -18,9 +23,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .main-sheet {
-  background: #fff;
+  background: #221F3A;
   @include outer-container;
-  padding: 2rem;
+  //padding: 2rem;
 }
 
 .header-container {
@@ -29,18 +34,50 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 2rem;
 }
 
+.vertical {
+  li {
+    display: block;
+    padding: 0.25rem 0rem;
+  }
+}
+
 .short {
 
 }
 
 .container-full {
-  @include span-columns(12);
+
+}
+
+.donut-left {
+  @include span-columns(8);
+}
+
+.donut-right {
+  @include span-columns(3);
 }
 
 .container-half {
-  @include span-columns(6);
-  background: #fff;
+
+  background: none;
 
 }
 .graph-container {
+  margin-bottom: 6rem;
+  background: none;
+
+}
+
+
+li {
+  list-style: none;
+  display: inline;
+  margin-right: 1rem;
+}
+
+i {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  display: inline-block;
 }

@@ -32,7 +32,7 @@ Chart.defaults.global = {
     scaleStartValue: null,
 
     // String - Colour of the scale line
-    scaleLineColor: "rgba(0,0,0,.1)",
+    scaleLineColor: "rgba(255,255,255,0.25)",
 
     // Number - Pixel width of the scale line
     scaleLineWidth: 1,
@@ -59,7 +59,7 @@ Chart.defaults.global = {
     scaleFontStyle: "normal",
 
     // String - Scale label font colour
-    scaleFontColor: "#666",
+    scaleFontColor: "#FFF",
 
     // Boolean - whether or not the chart should be responsive and resize when the browser does.
     responsive: true,
@@ -123,6 +123,21 @@ Chart.defaults.global = {
 
     // String - Template string for multiple tooltips
     multiTooltipTemplate: "<%= value %>",
+
+    ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : true,
+
+    // Gridlines
+    scaleGridLineColor: "rgba(255,255,255,1)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 10,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: true,
 
     // Function - Will fire on animation progression.
     onAnimationProgress: function(){},

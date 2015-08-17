@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Hoopla",
+    "generatedUrl": "hoopla",
+    "url": "www.db.no",
+    "randomdata": "woop",
+    "line_data_name": [
+      "Besøk vs salg pr dag",
+      "Totalt antall besøk pr dag",
+      "Same as first one"
+    ],
+    "line_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmZmNCgw",
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmYOcCgw",
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmZmNCgw"
+    ],
+    "donut_data_name": [
+      "Trafikkilder"
+    ],
+    "donut_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAutyfCgw"
+    ]
+  }
+]
