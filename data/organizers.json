@@ -2,8 +2,6 @@
   {
     "name": "Hoopla",
     "generatedUrl": "hoopla",
-    "url": "www.db.no",
-    "randomdata": "woop",
     "line_data_name": [
       "Besøk vs salg pr dag",
       "Totalt antall besøk pr dag",
@@ -20,5 +18,26 @@
     "donut_data_url": [
       "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAutyfCgw"
     ]
+  },
+  {
+    "name": "HellRX",
+    "generatedUrl": "ayB1NBZk8xwEufTqhJLE",
+    "line_data_name": [
+      "Besøk VS Salg siste 14 dager"
+    ],
+    "line_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw"
+    ],
+    "donut_data_name": [
+      "Trafikkilder siste 14 dager"
+    ],
+    "donut_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw"
+    ]
   }
 ]
+
+
+
+
+

@@ -26,14 +26,16 @@
 
 <% donut_data_url.each.with_index do |data, index| %>
 <h3><%= donut_data_name[index] %></h3>
-<div class="donut-left">
-  <div class="graph-container">
-    <canvas id="donutChart<%="#{index+1}" %>"></canvas>
+<div class="container-full">
+  <div class="donut-left">
+    <div class="graph-container">
+      <canvas id="donutChart<%="#{index+1}" %>"></canvas>
+    </div>
   </div>
-</div>
-<div class="donut-right">
-  <div class="graph-container">
-    <div id="donut-legend-<%="#{index+1}" %>-container" class="vertical"></div>
+  <div class="donut-right">
+    <div class="graph-container">
+      <div id="donut-legend-<%="#{index+1}" %>-container" class="vertical"></div>
+    </div>
   </div>
 </div>
   <script>
