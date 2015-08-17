@@ -66,7 +66,7 @@ set :images_dir, 'images'
 activate :livereload
 
 # Use relative URLs
-activate :relative_assets
+# activate :relative_assets
 
 # Directory
 activate :directory_indexes

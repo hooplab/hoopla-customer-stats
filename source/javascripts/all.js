@@ -1,7 +1,5 @@
 $.getScript("../javascripts/chart-config.js", function(){
-
    console.log("chart-config loaded");
-
 });
 
 
