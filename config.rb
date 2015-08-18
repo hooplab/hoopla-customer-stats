@@ -52,7 +52,15 @@
   data['organizers'].each do |organizer|
     # puts organizer
     # puts organizer[:name]
-    proxy "/statistics/#{organizer.generatedUrl}.html", "/statistics/template.html", :locals => { :organizer_name => organizer[:name], :line_data_url => organizer[:line_data_url], :line_data_name => organizer[:line_data_name], :donut_data_url => organizer[:donut_data_url], :donut_data_name => organizer[:donut_data_name] }, :ignore => true
+    proxy "/statistics/#{organizer.generatedUrl}.html", "/statistics/template.html", :locals => {
+      :organizer_name => organizer[:name],
+      :line_data_url => organizer[:line_data_url],
+      :line_data_name => organizer[:line_data_name],
+      :donut_data_url => organizer[:donut_data_url],
+      :donut_data_name => organizer[:donut_data_name],
+      :bar_data_name => organizer[:bar_data_name],
+      :bar_data_url => organizer [:bar_data_url]
+      }, :ignore => true
   end
 
 

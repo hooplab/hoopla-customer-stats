@@ -1,3 +1,8 @@
+---
+title: Hoopla - Det enkle billettsystemet
+layout: layout
+---
+
 <div class="main-sheet">
 
 <div class="header-container">
@@ -24,8 +29,26 @@
   </script>
 <% end %>
 
+<% bar_data_url.each.with_index do |data, index| %>
+  <div class="container-full short">
+    <div class="graph-container">
+      <h3><%= bar_data_name[index] %></h3>
+      <canvas id="barChart<%="#{index+1}" %>" height="100"></canvas>
+      <div id="bar-legend-<%="#{index+1}" %>-container"></div>
+    </div>
+  </div>
+
+  <script>
+    plotBarChart(
+     "<%= "#{data}" %>",
+     "barChart<%="#{index+1}" %>",
+     "bar-legend-<%="#{index+1}" %>-container"
+    );
+  </script>
+<% end %>
+
 <% donut_data_url.each.with_index do |data, index| %>
-<h3><%= donut_data_name[index] %></h3>
+<h3 style="display:block; width:100%;"><%= donut_data_name[index] %></h3>
 <div class="container-full">
   <div class="donut-left">
     <div class="graph-container">
@@ -46,3 +69,6 @@
     );
   </script>
 <% end %>
+
+
+

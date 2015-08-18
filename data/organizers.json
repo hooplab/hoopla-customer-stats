@@ -3,7 +3,7 @@
     "name": "Hoopla",
     "generatedUrl": "hoopla",
     "line_data_name": [
-      "Besøk vs salg pr dag",
+      "Besøk vs transaksjoner siste 14 dager",
       "Totalt antall besøk pr dag",
       "Same as first one"
     ],
@@ -13,10 +13,16 @@
       "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmZmNCgw"
     ],
     "donut_data_name": [
-      "Trafikkilder"
+      "Trafikkilder siste 14 dager"
     ],
     "donut_data_url": [
       "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAutyfCgw"
+    ],
+    "bar_data_name": [
+      "Aldersfordeling"
+    ],
+    "bar_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAusaBCgw"
     ]
   },
   {
@@ -29,10 +35,22 @@
       "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAgPKICgw"
     ],
     "donut_data_name": [
-      "Trafikkilder siste 14 dager"
+      "Trafikkilder siste 14 dager",
+      "Forderling",
+      "Antall billetter pr kategori"
     ],
     "donut_data_url": [
-      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw"
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICA7a2SCgw",
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAq_OHCgw",
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmeeDCgw"
+    ],
+    "bar_data_name": [
+      "Aldersfordeling",
+      "Kjøp fra by"
+    ],
+    "bar_data_url": [
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAusaBCgw",
+      "https://hoopla-customer-statistics.appspot.com/query?id=ahxlfmhvb3BsYS1jdXN0b21lci1zdGF0aXN0aWNzchULEghBcGlRdWVyeRiAgICAmYOcCQw"
     ]
   }
 ]
