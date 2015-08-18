@@ -174,21 +174,6 @@ window.plotDonutChart = function pdc(hcsurl, chartId, legendId) {
 
 $(function() {
 
-// $('#tab-content .single-tab').css('visibility','hidden');
-// $('#tab-content .single-tab:first').css('visibility','visible');
-
-// $('#nav li').click(function() {
-//     $('#nav li a').removeClass("active");
-//     $(this).find('a').addClass("active");
-//     $('#tab-content .single-tab').css('visibility','hidden');
-
-//     var indexer = $(this).index(); //gets the current index of (this) which is #nav li
-//     $('#tab-content .single-tab:eq(' + indexer + ')').css('visibility','visible'); //uses whatever index the link has to open the corresponding box
-// });
-
-});
-
-
 Chart.defaults.global = {
     // Boolean - Whether to animate the chart
     animation: true,
@@ -335,4 +320,21 @@ Chart.defaults.global = {
     // Function - Will fire on animation completion.
     onAnimationComplete: function(){}
 }
+
+// $('#tab-content .single-tab').css('visibility','hidden');
+// $('#tab-content .single-tab:first').css('visibility','visible');
+
+// $('#nav li').click(function() {
+//     $('#nav li a').removeClass("active");
+//     $(this).find('a').addClass("active");
+//     $('#tab-content .single-tab').css('visibility','hidden');
+
+//     var indexer = $(this).index(); //gets the current index of (this) which is #nav li
+//     $('#tab-content .single-tab:eq(' + indexer + ')').css('visibility','visible'); //uses whatever index the link has to open the corresponding box
+// });
+
+});
+
+
+
 
